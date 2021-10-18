@@ -11,6 +11,7 @@ import {
 import video from "../../assets/data/video.json";
 import styles from "./styles";
 import Videos from "../../assets/data/videos.json";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoListItem from "../../components/VideoListItem/VideoListItem";
 const VideoScreen = () => {
   let viewsString = video.views.toString();
@@ -21,9 +22,9 @@ const VideoScreen = () => {
   }
   return (
     <View style={styles.container}>
-      <Image style={styles.videoPlayer} source={{ uri: video.thumbnail }} />
+      <VideoPlayer videoURI={video.videoUrl} thumbnailURI={video.thumbnail}/>
       <View style={styles.videoInfoContainer}>
-        <Text style={styles.tags}>#pain #dukh #dard</Text>
+        <Text style={styles.tags}>#100daysofcode #reactnative #letsgoo</Text>
         <Text style={styles.title}>{video.title}</Text>
         <Text style={styles.subtitle}>
           {video.user.name} {viewsString} {video.createdAt}
